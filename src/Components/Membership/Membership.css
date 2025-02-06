@@ -1,0 +1,64 @@
+.active-btn{
+    padding: 8px 32px;
+    border-radius: 30px; 
+    color:#3D3362;
+    background: #E2DEFF;
+    font-size: 16PX ;
+    font-weight: 500;
+    border: 1px solid #E2DEFF;
+}
+
+.history-btn{
+    padding: 8px 32px;
+    border-radius: 30px; 
+    color:#AFAFAF;
+    border: 1px solid #AFAFAF;
+    font-size: 16PX ;
+    font-weight: 500;
+    background: none;
+}
+.membership-plan-container{
+    background: radial-gradient(ellipse at bottom right, #8CFF8C, #ECFFEC, #D4CFFF);
+    padding: 70px 49px 41px;
+    border-radius: 24px;
+    
+}
+.basic-plan-details h4{
+  color: #776DC3;
+  font-size: 24px;
+  font-weight: 700;
+
+}
+.basic-plan-details h5{
+    font-size: 24px;
+    font-weight: 700;
+}
+.basic-plan-details li{
+    list-style: disc;
+    font-weight: 500;
+}
+.basic-plan-details ul{
+    padding-left: 20px ;
+}
+.basic-plan-details{
+    display: flex;
+    justify-content: space-between;
+}
+.basic-plan-details h1{
+     color: #232323;
+     font-size: 12px;
+     font-weight: 400;
+}
+.basic-plan-details h2{
+     font-size: 16px;
+     font-weight: 700;
+}
+.basic-plan-details button{
+    border: 1px solid #15A900;
+    border-radius: 32px;
+    background: none;
+    padding: 18px 48px;
+    color: #15A900;
+    font-size: 14px;
+    font-weight: 500;
+}

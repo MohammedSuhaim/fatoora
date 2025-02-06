@@ -1,0 +1,162 @@
+.login-container{
+    width: 620px;
+    margin: auto;
+    /* padding: 55px; */
+    background: #F9F9FF;
+    border-radius: 24px;
+    overflow: hidden;
+}
+.login-top-container{
+    padding: 55px 55px 0 55px;
+    background: #F9F9FF;
+}
+.socialmedia h6{
+    font-size: 14px;
+    font-weight: 600;
+    color: #3D3362;
+    margin-bottom: 5px;
+
+}
+.socialmedia h5{
+    font-size: 14px ;
+    font-weight: 500;
+}
+
+.custom-input-box{
+    margin-top: 5px;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 8px 18px;
+    border-radius: 24px;
+}
+
+.password-container h5{
+    font-size: 12px;
+    font-weight: 500;
+    color: #33C433;
+    display: flex;
+    justify-content: end;
+}
+.login-btn{
+    padding: 13px;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    background: #33C433;
+    border-radius: 24px;
+    border: none;
+    align-items: center;
+    color: white;
+}
+.login-btn h6{
+    font-size: 16px;
+    font-weight: 500;
+}
+.or-span{
+    display: flex;
+    position: relative;
+    top: 14px;
+    width: 100%;
+}
+.or-span span{
+    flex: 1;
+    border: 1px solid #BFBFD2;
+    height: 0;
+    align-self: center;
+}
+.or-span h6{
+    border: 1px solid #BFBFD2;
+    color: #BFBFD2;
+    border-radius: 100%;
+    padding: 5px;
+    font-size: 11px;
+    height: 28px;
+    width: 28px;
+    align-content: center;
+    margin: 0 10px;
+}
+.socialmedia{
+    width: 100%;
+    padding: 35px 20px 45px;
+    display: flex;
+    gap: 12px;
+    text-align: center;
+    --bs-gutter-x : none ;
+}
+.google, .facebook{
+    background: transparent;
+    flex: 1 1;
+    display: flex;
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 28px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.number-login{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 33px; */
+    color: #33C433;
+}
+
+.number-login a{
+    font-size: 12px;
+    font-weight: 600;
+    color: #33C433;
+}
+.login-logo-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-logo-container h5{
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+}
+.login-logo-container h6{
+        font-size: 16px;
+        font-weight: 400;margin-bottom: 5px;
+}
+
+.password-box{
+    padding: 8px 18px;
+    width: 100%;
+    background: white;
+    border-radius: 28px;
+    justify-content: space-between;
+    display: flex;
+    outline: none;
+}
+.password-input{
+    background: transparent;
+    flex: 0 0 80%;
+    border: none;
+    outline: none;
+}
+
+.password-btn{
+    padding: none;
+    border: none;
+    background: none;
+}
+
+.custom-input{
+    width: 100%;
+    margin-top: 5px;
+    padding: 12px 24px;
+    background: transparent;
+    border-radius: 28px;
+    border: 1px solid #ccc;
+    outline: none;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+}
+

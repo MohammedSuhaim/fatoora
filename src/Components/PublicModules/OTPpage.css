@@ -1,0 +1,73 @@
+.otp-container{
+    margin: auto;
+    width: 50%;
+    background: white;
+    padding: 48px 72px;
+    /* text-align: center; */
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+}
+.verify-container{
+    text-align: center;
+    width: 50%;
+}
+.verify-container h5{
+    font-size: 32px;
+    font-weight: 700;
+    color: #3D3362;
+
+}
+.verify-container h6{
+    color: #000000;
+    font-size: 16px;
+    font-weight: 400;
+}
+.otp-input{
+    width: 65%;
+}
+.opt-input h6{
+    color: #232323;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+input.input-box.col {
+    padding: 10px;
+    max-width: 45px;
+    height: 45px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+.input-container{
+    width: 100%;
+    justify-content: space-between;
+
+}
+.verify-btn{
+    width: 100%;
+    margin: 10px 0;
+    padding: 16px;
+    border-radius: 28px;
+    border: none;
+    background: #33C433;
+}
+.verify-btn h6{
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+ /* Remove arrows in Webkit browsers (Chrome, Safari, Edge) */
+ input[type=number]::-webkit-outer-spin-button,
+ input[type=number]::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+ }
+
+ /* Remove arrows in Firefox */
+ input[type=number] {
+     -moz-appearance: textfield;
+ }

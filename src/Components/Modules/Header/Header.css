@@ -1,0 +1,17 @@
+.navbar-nav{
+    align-items: center;
+    gap: 15px;
+}
+.search-container{
+    display: flex;
+    gap: 10px;
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+}
+
+a#basic-nav-dropdown{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}

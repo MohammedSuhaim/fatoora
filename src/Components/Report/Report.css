@@ -1,0 +1,16 @@
+.overview-right{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.overview-right button{
+    color: #776DC3;
+    padding: 5px 16px;
+    border-radius: 28px;
+    border: 1px solid #776DC3;
+    background: none;
+    font-size: 14px;
+    font-weight: 700;
+    height: fit-content;
+}

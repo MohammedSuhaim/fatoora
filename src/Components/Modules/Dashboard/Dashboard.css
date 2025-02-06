@@ -1,0 +1,140 @@
+.dashboard{
+    padding: 24px 60px;
+}
+.dashboard-header{
+    display: flex;
+    justify-content: space-between;
+}
+.dashboard-create-btn{
+    display: flex;
+    padding: 12px 30px;
+    border-radius: 28px;
+    gap: 4px;
+    border: none;
+    background: black;
+    align-items: center;
+}
+.dashboard-create-btn img{
+    background: transparent;
+}
+.dashboard-create-btn h6{
+    background: transparent;
+    color: #9DFF9D;
+}
+.dashboard-header h4{
+    color: #3D3362;
+    font-family: nunito;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.dashboard-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px 0;
+}
+.dashboard-item1{
+    flex: 1 1;
+    background: #3D3362;
+
+    padding: 24px 33px;
+    height: fit-content;
+    border-radius: 16px;
+    color: white;
+}
+
+.dashboard-item2{
+    flex: 1 1;
+    background: #BFF8BF;
+
+    padding: 24px 33px;
+    height: fit-content;
+    border-radius: 16px;
+    color: #3D3362;
+
+}
+.dashboard-item3{
+    flex: 1 1;
+    background: #E2DEFF;
+
+    padding: 24px 33px;
+    height: fit-content;
+    border-radius: 16px;
+    color: #3D3362;
+
+}
+.dashboard-container-2{
+    display: flex;
+    justify-content: space-between;
+    /* gap: 20px; */
+}
+.revenue-overview{
+    flex: 0 0 68%;
+    background-color: white;
+    padding: 22px 28px;
+    border-radius: 16px;
+}
+
+.invoice-left{
+    flex: 0 0 30%;
+    background: white;
+
+    border-radius: 10px;
+}
+.membership-status{
+    padding: 28px 32px;
+    margin: 8px;
+    border-radius: 8px;
+    color: #3D3362;
+    background: linear-gradient(to left, #8CFF8C80 , #8CFF8C80, #D4CFFF80);
+}
+.top-up-btn{
+    height: fit-content;
+    display: flex;
+    padding: 7px 16px;
+    gap: 5px;
+    border: none;
+    border-radius: 28px;
+    align-items: center;
+    background: #C5FFC5;
+}
+.top-up-btn h6{
+    font-size: 12px;
+    font-weight: 700;
+    color: #3D3362;
+    font-family: nunito;
+}
+
+.dashboard-container-3{
+    display: flex;
+    gap: 20px;
+    margin: 25px 0;
+}
+.integration{
+    flex: 0 0 35%;
+    padding: 24px;
+    color: #3D3362;
+    border-radius: 16px;
+    background: #E2DEFF;
+}
+.refer{
+    flex: 0 0 65%;
+    color: #3D3362;
+    border-radius: 8px;
+    padding: 30px 45px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to right,#8CFF8C,#ECFFEC , #D4CFFF );
+}
+
+.refer-container h5{
+       font-size: 32px;
+       font-weight: 700;
+       color: #3D3362;
+}
+.refer-container h6{
+    font-size: 16px;
+    font-weight: 500;
+}
