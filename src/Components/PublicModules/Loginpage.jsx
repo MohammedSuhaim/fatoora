@@ -5,7 +5,7 @@ import google from "../../Assets/Images/google.svg";
 import facebook from "../../Assets/Images/facebook.svg";
 import rightarrow from "../../Assets/Images/arrow-right.svg";
 import Footer from "../Modules/Footer/Footer";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../redux/Api/Index";
 import { useFormik } from "formik";
 
@@ -99,14 +99,16 @@ const Loginpage = ({ className, ...props }) => {
               value={formik.values.email}
             />
             {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+
+            
             <button className="login-btn my-4 col-lg-12" type="submit">
               <h6>Login Account</h6> <img src={rightarrow} alt="" />
             </button>
           </form>
           <div className="number-login p-1">
-            <a href="" className="">
+            <Link to="/numberlogin" className="">
               Login With Number
-            </a>
+            </Link>
           </div>
         </div>
         <div className="or-span">

@@ -19,6 +19,8 @@ import Sidebarmini from '../Usersetting/Usersettingsidebar';
 import Passwordchange from '../Usersetting/Passwordchange';
 import Membershippage from '../Membership/Membership';
 import Report from '../Report/Reportpage';
+import Numberlogin from '../PublicModules/Numberlogin';
+import Numberotppage from '../PublicModules/Numberotp';
 
 // import Homepage from '../../Components/HomePage/Homepage';
 
@@ -43,7 +45,9 @@ function AppRoutes() {
           <Route path='/passwordchange' element={<PrivateRoutes><Passwordchange/></PrivateRoutes>}></Route>
           <Route path='/membershippage' element={<PrivateRoutes><Membershippage/></PrivateRoutes>}></Route>
           <Route path='/reportpage' element={<PrivateRoutes><Report/></PrivateRoutes>}></Route>
-          
+          <Route path='/numberlogin' element= {<PublicRoutes> <Numberlogin/> </PublicRoutes>}></Route>
+          <Route path='/numberotppage' element= {<PublicRoutes> <Numberotppage/> </PublicRoutes>}></Route>
+
 
 
 

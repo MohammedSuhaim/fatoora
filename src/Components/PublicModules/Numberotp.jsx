@@ -6,19 +6,24 @@ import axiosInstance from "../redux/Api/Index";
 import { useNavigate, useHistory } from  "react-router-dom";
 
 
-const Otppage = () => {
+const Numberotppage = () => {
   const [otp, setOtp] = useState(new Array(6).fill(""));
-  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
   const [error, setError] = useState("");
   const inputs = useRef([]);
    const [success, setSuccess] = useState("");
   const navigate = useNavigate();
+  const [touched, setTouched] = useState(new Array(6).fill(false));
+  const [code, setCode] = useState("");
+
 
   useEffect(() => {
     // Retrieve email ID and registration status from localStorage
-    const storedEmail = localStorage.getItem("email");
+    const storedNumber = localStorage.getItem("number");
+    const storedCountrycode = localStorage.getItem("countrycode");
     const isRegistered = localStorage.getItem("is_registered");
-    setEmail(storedEmail);
+    setNumber(storedNumber);
+    setCode(storedCountrycode);
   }, []);
 
   const handleChange = (e, index) => {
@@ -34,12 +39,19 @@ const Otppage = () => {
     }
     e.target.value = value.slice(-1);
   };
+  
+  const handleBlur = (index) => {
+    const newTouched = [...touched];
+    newTouched[index] = true;
+    setTouched(newTouched);
+  };
 
   const handleSubmit = async () => {
     const otpValue = parseInt(otp.join(""), 10);
     try {
-      const response = await axiosInstance.post("/customer_app/users/email_verify_otp", {
-        email_id: email,
+      const response = await axiosInstance.post("/customer_app/users/verify_otp", {
+         mobile_number: number,
+            country_code: code,
         otp: otpValue
       });
 
@@ -47,18 +59,18 @@ const Otppage = () => {
     //   alert("OTP verified successfully!");
       const isRegistered = localStorage.getItem("is_registered");
       
-      if (response.data.status) {
+      if (response.data.status === true) {
         setSuccess("otp verified successfull");
         console.log("otp login successfull");
         navigate("/dashboard"); 
       } else {
-        setError("Failed to verify OTP. Please try again.");
+        setError("Invalid OTP. Please try again.");
       }
     } catch (error) {
       console.error("Error verifying OTP:", error);
       console.log(otpValue, "OTP value");
       console.error("API Error:", error.response ? error.response.data : error.message); 
-      setError("Failed to verify OTP. Please try again.");
+      setError("Failed to verify OTP");
     }
   };
 
@@ -68,7 +80,7 @@ const Otppage = () => {
         <img src={otplogo} height={'106px'} alt="" />
         <div className="verify-container">
           <h5>Verify OTP</h5>
-          <h6>We have sent one time password to your email id <span>{email}</span></h6>
+          <h6>We have sent one time password to your mobile number <span>{code} {number}</span></h6>
         </div>
         <div className="otp-input my-2">
           <h6>Enter OTP</h6>
@@ -80,11 +92,13 @@ const Otppage = () => {
                 type="number"
                 maxLength="1"
                 onChange={(e) => handleChange(e, index)}
+                onBlur={() => handleBlur(index)}
                 ref={(el) => (inputs.current[index] = el)}
                 value={otp[index]}
               />
             ))}
           </div>
+          {touched.includes(true) && otp.includes("") && <div className="error">Please enter the otp</div>}
           {error && <div className="error">{error}</div>}
           {success && <div className="success-message">{success}</div>}
           <button className='verify-btn my-4' onClick={handleSubmit}> 
@@ -98,4 +112,4 @@ const Otppage = () => {
   );
 };
 
-export default Otppage;
+export default Numberotppage;

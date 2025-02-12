@@ -16,12 +16,15 @@ axiosInstance.interceptors.request.use(
         };
         if (token != null) {
             config.headers['Authorization'] = authToken;
+            // console.log("authToken", authToken) 
         }
         if ( authToken == null) {
             config.headers['auth-token'] = token;
+            // console.log("toksffsensdc", token)
         }
         else{
             config.headers['authorization'] = `Bearer `+token;
+            // console.log("tokfvsfen", token)
         }
         return config;
     },

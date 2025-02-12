@@ -178,3 +178,14 @@ li{
 a{
   text-decoration: none;
 }
+
+.draft-btn:hover , .draft-btn:focus , .draft-btn:active{
+  padding: 8px 32px;
+  border-radius: 26px;
+  color: #33C433;
+  border: 1px solid #33C433;
+  background: white;
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 5px;
+}

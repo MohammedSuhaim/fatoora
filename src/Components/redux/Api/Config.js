@@ -4,7 +4,7 @@ const HOST = 'http://43.205.18.14:8085/';
 
 
 
-export const getLocalToken = () => localStorage.getItem('token') || null;
+export const getLocalToken = () => localStorage.getItem('generate_token') || null;
 
 export const getAuthToken = () => localStorage.getItem('authcheck') || null;
 

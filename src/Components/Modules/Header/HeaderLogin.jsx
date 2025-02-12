@@ -26,7 +26,7 @@ function Headerlogin({islogedin,setisLogedin}){
         
 
 <Navbar  expand="lg">
-            <Navbar.Brand href="#home"><img src={logo} alt="" /></Navbar.Brand>
+            <Navbar.Brand href="/fatoora"><img src={logo} alt="" /></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse style={{justifyContent: 'end'}} id="basic-navbar-nav">
                 <Nav className="">
@@ -36,7 +36,7 @@ function Headerlogin({islogedin,setisLogedin}){
                     <Nav.Link >FAQ's</Nav.Link>
                     <Nav.Link >Contact Us</Nav.Link>
                     <Nav.Link onClick={handleClick}>Signup</Nav.Link>
-                    <Nav.Link onClick={onClick}>Signin</Nav.Link>
+                    <Nav.Link onClick={onClick}>SignIn</Nav.Link>
                        
                 </Nav>
             </Navbar.Collapse>

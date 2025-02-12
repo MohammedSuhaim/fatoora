@@ -64,7 +64,7 @@ const Kycpage = ({ userData }) => {
     category_id: '',
     companyServices: '',
     address: '',
-    profile_image: '',
+    profile_image: null ,
   };
 
   const validationSchema = Yup.object({
@@ -83,6 +83,7 @@ const Kycpage = ({ userData }) => {
         const base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
         setImageSrc(reader.result);
         setFieldValue('profile_image', base64String);
+        localStorage.setItem('profile_image', base64String);
       };
       reader.readAsDataURL(file);
     } else {
@@ -96,13 +97,18 @@ const Kycpage = ({ userData }) => {
       ...userData,
       ...values,
     };
+    
 
     try {
       const response = await axiosInstance.post("/customer_app/users/register", singleData);
       if (response.data.status) {
         setSuccess("Account created successfully");
+        localStorage.setItem('email_id', response.data.response.email_id);
+        localStorage.setItem('first_name', response.data.response.first_name);
         console.log("formik values last last", values);
         navigate("/dashboard");
+       
+        
       } else {
         setError("An error occurred. Please try again.");
       }
