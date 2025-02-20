@@ -4,6 +4,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@date-io/date-fns": "^3.2.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/lab": "^6.0.0-beta.27",
+    "@mui/material": "^6.4.4",
     "@react-pdf-viewer/core": "^3.12.0",
     "@react-pdf-viewer/default-layout": "^3.12.0",
     "@react-pdf-viewer/print": "^3.12.0",
@@ -12,6 +17,7 @@
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "cra-template": "1.2.0",
+    "date-fns": "^3.6.0",
     "deepmerge": "^4.3.1",
     "formik": "^2.4.6",
     "html2canvas": "^1.4.1",
@@ -20,6 +26,7 @@
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.8",
+    "react-date-picker": "^11.0.0",
     "react-datepicker": "^7.6.0",
     "react-dom": "^19.0.0",
     "react-i18next": "^15.4.0",
@@ -35,6 +42,7 @@
     "reactstrap": "^9.2.3",
     "recharts": "^2.15.0",
     "styled-components": "^6.1.14",
+    "uuid": "^11.0.5",
     "yup": "^1.6.1"
   },
   "scripts": {

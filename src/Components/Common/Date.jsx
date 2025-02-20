@@ -2,55 +2,35 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import styled from 'styled-components';
-import calendarAlt  from '../../Assets/Images/Insta.svg';
+import calendarAlt from '../../Assets/Images/chevron-down.svg';
 
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 5px;
-`;
-
-const DateInput = styled.input`
-  border: none;
-  outline: none;
-  padding: 5px;
-  flex: 1;
-`;
-
-
-// const CalendarIcon = CalendarAlt`
-//   cursor: pointer;
-//   margin-left: 5px;
-// `;
-
-const DatePickerComponent = () => {
-  const [selectedDate, setSelectedDate] = useState(null);
+const DatePickerComponent = ({ selected, onChange }) => {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
   return (
-    <Container>
-      <DateInput
-        type="text"
-        value={selectedDate ? selectedDate.toLocaleDateString() : ''}
-        readOnly
-      />
-      <div className="">
-      <img src={calendarAlt} onClick={() => setIsCalendarOpen(!isCalendarOpen)} />
-      {isCalendarOpen && (
-        <div className="" style={{position: 'absolute', right: '0'}}>
-        <DatePicker
-        className='date-picker'
-          selected={selectedDate}
-          onChange={(date) => {
-            setSelectedDate(date);
-            setIsCalendarOpen(false);
-          }}
-          inline
-        /></div>
-      )}</div>
-    </Container>
+    <div className='container'>
+      <div className="custom-input" onClick={() => setIsCalendarOpen(!isCalendarOpen)}>
+        <div className='date-input align-items-center d-flex'>
+          {selected ? selected.toLocaleDateString() : 'Select Date'}
+        </div>
+        <div className="">
+          <img src={calendarAlt} onClick={() => setIsCalendarOpen(!isCalendarOpen)} alt="Calendar icon" />
+          {isCalendarOpen && (
+            <div className="" style={{ position: 'absolute' }}>
+              <DatePicker
+                className='date-picker'
+                selected={selected}
+                onChange={(date) => {
+                  onChange(date);
+                  setIsCalendarOpen(false);
+                }}
+                inline
+              />
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
   );
 };
 

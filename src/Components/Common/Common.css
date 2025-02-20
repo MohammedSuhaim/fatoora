@@ -1,0 +1,11 @@
+.date-input{
+    border: none;
+    outline: none;
+    cursor:pointer;
+}
+
+.container{
+    display: flex;
+  align-items: center;
+  padding: 5px 15px;
+}

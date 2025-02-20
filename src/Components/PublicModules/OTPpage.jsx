@@ -4,6 +4,7 @@ import "./OTPpage.css";
 import Footer from '../Modules/Footer/Footer';
 import axiosInstance from "../redux/Api/Index";
 import { useNavigate, useHistory } from  "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
 
 
 const Otppage = () => {
@@ -50,6 +51,9 @@ const Otppage = () => {
       if (response.data.status) {
         setSuccess("otp verified successfull");
         console.log("otp login successfull");
+
+       
+
         navigate("/dashboard"); 
       } else {
         setError("Failed to verify OTP. Please try again.");

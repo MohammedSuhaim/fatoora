@@ -38,6 +38,11 @@ export default function Sidebar() {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate('/');
+  };
+
   return (
     <div className="sidebar">
       <div className="sidebarlogo">
@@ -148,7 +153,7 @@ export default function Sidebar() {
               </a>
             </div>
           </div>
-          <a href="" className="logout sidebar-item">
+          <a href="" className="logout sidebar-item" onClick={handleLogout}>
             <img src={logout} alt="" className="" />
             <h6>Logout</h6>
           </a>

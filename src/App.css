@@ -189,3 +189,25 @@ a{
   font-weight: 500;
   margin-right: 5px;
 }
+
+.error-message{
+  color: red;
+}
+
+/* Hides the clock icon in Chrome, Safari, and Edge */
+.custom-time-input::-webkit-clear-button,
+.custom-time-input::-webkit-inner-spin-button,
+.custom-time-input::-webkit-calendar-picker-indicator {
+  /* visibility: hidden; */
+  opacity: 0;
+  /* -webkit-appearance: none; */
+}
+
+/* Hides the clock icon in Firefox */
+.custom-time-input {
+  /* -moz-appearance: textfield; */
+}
+
+.react-datepicker{
+  z-index: 5;
+}

@@ -9,6 +9,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../redux/Api/Index";
 import { useFormik } from "formik";
 
+
+
 export const Socialmedia = ({ bgColor, bgColor1 }) => {
   return (
     <div className="socialmedia row" style={{ background: bgColor }}>
@@ -44,36 +46,54 @@ const Loginpage = ({ className, ...props }) => {
 
   const formik = useFormik({
     initialValues: {
-      email: "",
+        email: "",
+        password: '',
     },
     validate,
     onSubmit: async (values, { setSubmitting }) => {
-      try {
-  
-        const response = await axiosInstance.post(
-          "/customer_app/users/email_send_otp",
-          {
-            email_id: values.email,
-          }
-        );
+        try {
+            const response = await axiosInstance.post(
+                "/customer_app/users/login",
+                {
+                    email_id: values.email,
+                    password: values.password,
+                }
+            );
 
-        if (response.data.status === true) {
-          localStorage.setItem("email", values.email);
-          localStorage.setItem("is_registered", response.data.response.is_register); 
-          console.log(response, "OTP sent successfully");
-          // alert(`OTP sent to ${values.email}`);
-          navigate("/otppage"); 
-        } else {
-          setError("Failed to send OTP. Please try again.");
+            if (response.data.status === true) {
+                const uuid = response.data.response.uuid;  // Get UUID from response
+                localStorage.setItem("email", values.email);
+                localStorage.setItem("is_registered", response.data.response.is_register); 
+                console.log(response, "OTP sent successfully");
+
+                // Post UUID to validate_and_issue_token API
+                const tokenResponse = await axiosInstance.post(
+                    "validate_and_issue_token",
+                    {
+                        uuid: uuid,
+                    }
+                );
+
+                if (tokenResponse.data.status === true) {
+                    const accessToken = tokenResponse.data.response.access_token;
+                    localStorage.setItem("authcheck", accessToken);
+                    console.log("exidcksndv dat dta")  // Store access token in local storage
+                    navigate("/dashboard"); 
+                } else {
+                    setError("Failed to validate UUID and issue token. Please try again.");
+                }
+            } else {
+                setError("Failed to send OTP. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            setError("An error occurred. Please try again.");
+        } finally {
+            setSubmitting(false);
         }
-      } catch (error) {
-        console.error("Error sending OTP:", error);
-        setError("Failed to send OTP. Please try again.");
-      } finally {
-        setSubmitting(false);
-      }
     },
-  });
+});
+
 
   return (
     <div className="">
@@ -88,7 +108,8 @@ const Loginpage = ({ className, ...props }) => {
             className="email-container my-3"
             onSubmit={formik.handleSubmit}
           >
-            <label htmlFor="email">Email ID</label>
+          <div className="">
+          <label htmlFor="email">Email ID</label>
             <input
               className="custom-input"
               placeholder="Enter Email ID"
@@ -99,8 +120,21 @@ const Loginpage = ({ className, ...props }) => {
               value={formik.values.email}
             />
             {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+          </div>
+            <div className="">
+            <label htmlFor="password">Email ID</label>
+            <input
+              className="custom-input"
+              placeholder="Enter password"
+              id="password"
+              name="password"
+              type="password"
+              onChange={formik.handleChange}
+              value={formik.values.password}
+            />
+            {formik.errors.password ? <div>{formik.errors.password}</div> : null}
 
-            
+            </div>
             <button className="login-btn my-4 col-lg-12" type="submit">
               <h6>Login Account</h6> <img src={rightarrow} alt="" />
             </button>

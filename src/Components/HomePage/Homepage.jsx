@@ -256,35 +256,54 @@ const handleclick = () => {
         </div>
           
 
-
-         <div className="pt-5">
-         <Accordion defaultActiveKey="0">
-      <Accordion.Item className="py-4" eventKey="0">
-      <Button variant="outline-light" onClick={(e) => { e.stopPropagation(); toggleIcon(); }} aria-expanded={isOpen} >  <Accordion.Header> <div className="btn-span"><span>1.</span> <h6>Can I cancel my subscription if I no longer use it?</h6></div> </Accordion.Header></Button> 
-        <Accordion.Body>
-        Absolutely! Our platform seamlessly integrates with all major e-commerce platforms including Shopify, Magento, Wordpress ect.
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item className="py-4" eventKey="1">
-      <Button variant="outline-light" onClick={(e1) => { e1.stopPropagation(); toggleIcon1(); }} aria-expanded={isOpen1} >  <Accordion.Header> <div className="btn-span"><span>2.</span> <h6>Are the invoices GST-compliant?</h6> </div> </Accordion.Header></Button> 
-        <Accordion.Body>
-        Absolutely! Our platform seamlessly integrates with all major e-commerce platforms including Shopify, Magento, Wordpress ect.
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item className="py-4" eventKey="2">
-      <Button variant="outline-light" onClick={(e2) => { e2.stopPropagation(); toggleIcon2(); }} aria-expanded={isOpen2} >    <Accordion.Header> <div className="btn-span"><span>3.</span> <h6>Is my data secure?</h6></div> </Accordion.Header></Button> 
-        <Accordion.Body >
-        Absolutely! Our platform seamlessly integrates with all major e-commerce platforms including Shopify, Magento, Wordpress ect.
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item className="py-4" eventKey="3">
-      <Button variant="outline-light" onClick={(e3) => { e3.stopPropagation(); toggleIcon3(); }} aria-expanded={isOpen3} >  <Accordion.Header > <div className="btn-span"><span>4.</span> <h6>Can I cancel my subscription if I no longer use it?</h6>  </div>   </Accordion.Header></Button> 
-        <Accordion.Body>
-        Absolutely! Our platform seamlessly integrates with all major e-commerce platforms including Shopify, Magento, Wordpress ect.
-        </Accordion.Body>
-      </Accordion.Item>
-    </Accordion>
-         </div>
+        <div className="pt-5">
+      <Accordion defaultActiveKey="0">
+        <Accordion.Item className="py-4" eventKey="0">
+          <Accordion.Header onClick={(e) => { e.stopPropagation(); toggleIcon(); }} aria-expanded={isOpen}>
+            <div className="btn-span">
+              <span>1.</span>
+              <h6>Can I cancel my subscription if I no longer use it?</h6>
+            </div>
+          </Accordion.Header>
+          <Accordion.Body>
+            Absolutely! Our platform seamlessly integrates with all major e-commerce platforms including Shopify, Magento, Wordpress, etc.
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item className="py-4" eventKey="1">
+          <Accordion.Header onClick={(e1) => { e1.stopPropagation(); toggleIcon1(); }} aria-expanded={isOpen1}>
+            <div className="btn-span">
+              <span>2.</span>
+              <h6>Are the invoices GST-compliant?</h6>
+            </div>
+          </Accordion.Header>
+          <Accordion.Body>
+            Absolutely! Our platform seamlessly integrates with all major e-commerce platforms including Shopify, Magento, Wordpress, etc.
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item className="py-4" eventKey="2">
+          <Accordion.Header onClick={(e2) => { e2.stopPropagation(); toggleIcon2(); }} aria-expanded={isOpen2}>
+            <div className="btn-span">
+              <span>3.</span>
+              <h6>Is my data secure?</h6>
+            </div>
+          </Accordion.Header>
+          <Accordion.Body>
+            Absolutely! Our platform seamlessly integrates with all major e-commerce platforms including Shopify, Magento, Wordpress, etc.
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item className="py-4" eventKey="3">
+          <Accordion.Header onClick={(e3) => { e3.stopPropagation(); toggleIcon3(); }} aria-expanded={isOpen3}>
+            <div className="btn-span">
+              <span>4.</span>
+              <h6>Can I cancel my subscription if I no longer use it?</h6>
+            </div>
+          </Accordion.Header>
+          <Accordion.Body>
+            Absolutely! Our platform seamlessly integrates with all major e-commerce platforms including Shopify, Magento, Wordpress, etc.
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
+    </div>
 
 
 
